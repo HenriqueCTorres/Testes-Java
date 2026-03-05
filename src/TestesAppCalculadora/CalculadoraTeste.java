@@ -17,7 +17,7 @@ public class CalculadoraTeste {
        Calculadora calc= new Calculadora();
        double resultadoEsperado = 10;
        double resultadoReal= calc.somar(nro1, nro2);      
-       assertEquals(resultadoEsperado, resultadoReal);
+       assertEquals(resultadoEsperado, resultadoReal, 0);
    }
 
    /**
@@ -30,7 +30,7 @@ public class CalculadoraTeste {
       Calculadora calc = new Calculadora();
       double resultadoEsperado= 2;
       double resultadoReal= calc.subtrair(nro1, nro2);
-      assertEquals(resultadoEsperado, resultadoReal);  
+      assertEquals(resultadoEsperado, resultadoReal, 0);  
   }
   
    /**
@@ -43,7 +43,7 @@ public class CalculadoraTeste {
        Calculadora calc = new Calculadora();
        double resultadoEsperado = 9;
        double resultadoReal = calc.multiplicar(nro1, nro2);
-       assertEquals(resultadoEsperado, resultadoReal);
+       assertEquals(resultadoEsperado, resultadoReal, 0);
    }
 
    /**
@@ -54,9 +54,22 @@ public class CalculadoraTeste {
 	  double nro1 = 3;
 	  double nro2 = 2;
       Calculadora calc = new Calculadora();
-      double resultadoEsperado= 1;
+      double resultadoEsperado= 1.5;
       double resultadoReal = calc.dividir(nro1, nro2);
-      assertEquals(resultadoEsperado, resultadoReal);
+      assertEquals(resultadoEsperado, resultadoReal, 0.1);
+  }
+  
+  /**
+   * Teste de dividir na Calculadora.
+   */
+  @Test
+  public void testeDividir3por7() {
+	  double nro1 = 3;
+	  double nro2 = 7;
+      Calculadora calc = new Calculadora();
+      double resultadoEsperado= 0.4285;
+      double resultadoReal = calc.dividir(nro1, nro2);
+      assertEquals(resultadoEsperado, resultadoReal, 0.0001);
   }
     
 }
